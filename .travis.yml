@@ -9,7 +9,8 @@ before_install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   - echo "$DOCKER_PSWD" | docker login -u "$DOCKER_USER" --password-stdin
   - docker login -u "_" --password="$HEROKU_PSWD" registry.heroku.com #logged in
-  - echo "$HEROKU_EMAIL \n $HEROKU_UPSWD \n" | heroku login
+  - echo '$HEROKU_EMAIL \n $HEROKU_UPSWD \n' | heroku login
+  - heroku container:login
 
 script:
   - docker build -t $DOCKER_USER/smbr_client -f client/Dockerfile.client client;
@@ -29,7 +30,6 @@ deploy:
     docker push $DOCKER_USER/smbr_api;
     docker push registry.heroku.com/$HEROKU_API/web;
     
-    heroku container:login
     heroku container:release web --app $HEROKU_CLIENT;
     heroku container:release web --app $HEROKU_API;  
 
