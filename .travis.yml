@@ -24,7 +24,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "$HEROKU_PSWD"
+    secure: $HEROKU_PSWD
   script:
     docker push registry.heroku.com/$HEROKU_FRONT/web;
     heroku container:release web --app $HEROKU_FRONT;
