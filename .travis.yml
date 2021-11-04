@@ -7,6 +7,7 @@ services:
 
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+  - travis encrypt $(heroku auth:token) --add deploy.api_key --pro
   - echo "$DOCKER_PSWD" | docker login -u "$DOCKER_USER" --password-stdin
   - echo "$HEROKU_PSWD" | docker login -u "_" --password-stdin registry.heroku.com #logged in
 
@@ -22,9 +23,6 @@ script:
   - heroku container:release web --app $HEROKU_BACK;
 
 deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_PSWD
   script:
     docker push registry.heroku.com/$HEROKU_FRONT/web;
     heroku container:release web --app $HEROKU_FRONT;
