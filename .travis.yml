@@ -24,6 +24,9 @@ script:
   - heroku container:release web --app $HEROKU_BACK;
 
 deploy:
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_PSWD"
   script:
     echo "DONE"
 on: 
