@@ -19,13 +19,9 @@ script:
   - docker build -t $DOCKER_USER/smbr_api -f api/Dockerfile.api api;
   - docker tag $DOCKER_USER/smbr_api registry.heroku.com/$HEROKU_BACK/web;
   - docker push $DOCKER_USER/smbr_api;
-  - docker push registry.heroku.com/$HEROKU_BACK/web;
-  - heroku container:release web --app $HEROKU_BACK;
 
 deploy:
-  script:
-    docker push registry.heroku.com/$HEROKU_FRONT/web;
-    heroku container:release web --app $HEROKU_FRONT;
-
-on: 
-  branch: master 
+  - provider: script
+    script: bash ./deploy.sh
+    on: 
+      branch: master 

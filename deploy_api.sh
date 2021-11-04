@@ -1,4 +1,3 @@
- docker build -t api -f api/Dockerfile.api api &&
- docker tag api registry.heroku.com/smb-back/api &&
- docker push registry.heroku.com/smb-back/api &&
- heroku container:release api --app smb-back
+docker login --username $HEROKU_UUSR --password $HEROKU_UPSWD registry.heroku.com
+docker push registry.heroku.com/smb-back/api
+heroku container:release api --app smb-back
