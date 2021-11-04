@@ -23,5 +23,8 @@ script:
   - docker push registry.heroku.com/$HEROKU_BACK/web;
   - heroku container:release web --app $HEROKU_BACK;
 
-  on: 
-    branch: master 
+deploy:
+  script:
+    echo "DONE"
+on: 
+  branch: master 
