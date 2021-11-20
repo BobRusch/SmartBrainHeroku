@@ -8,7 +8,7 @@ services:
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   - echo "$DOCKER_PSWD" | docker login -u "$DOCKER_USER" --password-stdin
-  - echo "$(heroku auth:token)" | docker login -u "_" --password-stdin registry.heroku.com #logged in
+  - heroku auth:token | docker login -u "_" --password-stdin registry.heroku.com #logged in
 
 script:
   - docker build -t $DOCKER_USER/smbr_client -f client/Dockerfile.client client;
