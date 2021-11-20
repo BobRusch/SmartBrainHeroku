@@ -1,4 +1,4 @@
-FROM node as build-stage
+FROM node
 
 CMD mkdir -p /app
 
