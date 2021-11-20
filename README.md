@@ -38,8 +38,10 @@
 * NAME ==> DOCKER_PSWD VALUE ==> <YOUR_DOCKER_PASSWORD> LEAVE TURN ON DISPLAY VALUE IN BUILD LOG off and hit add
 * NAME ==> HEROKU_BACK ==> <replace with unique name for api> TURN ON DISPLAY VALUE IN BUILD LOG and hit add
 * NAME ==> HEROKU_FRONT ==> <replace with unique name for client> TURN ON DISPLAY VALUE IN BUILD LOG and hit add
-
-
+* NAME ==> HEROKU+AUTH VALUE ==> <value from running `heroku authorizations:create` and copying value for token > LEAVE TURN ON DISPLAY VALUE IN BUILD LOG off and hit add
+#
+__Results should lokk simular to this__
+![Travis-CI Environemnt Variables](/images/travis_env_vars.png)
 
 
 
