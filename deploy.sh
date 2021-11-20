@@ -1,4 +1,4 @@
 docker push registry.heroku.com/smb-back/web
-heroku container:release web --app smb-back
+heroku container:release web --app $HEROKU_BACK
 docker push registry.heroku.com/sbclient/web
-heroku container:release web --app sbclient
+heroku container:release web --app $HEROKU_FRONT
