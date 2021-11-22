@@ -18,7 +18,6 @@ __** Make sure you use postgreSQL instead of mySQL for this code base.__
 ![Docker](https://img.shields.io/badge/-Docker-333333?style=flat&logo=docker)
 ![made-for-nginx](https://img.shields.io/badge/-NGINX-1f425f.svg)
 ![Travis-CI](https://badgen.net/badge/icon/Travis-CI?icon=travis&label)]
-
 # __**To run app:**__
 This app uses a roll-your-own authentication system. So register or use the prebuilt login id: bob@em.com and a password of: 1234. After you signin, you will be displayed an entry screen where you can place the image address to have the system locate the faces in the image. Click [here](http://sbclient.herokuapp.com) to run a live demo of this app (At the bottom are some example photos links that can be used, or Google: image of people's faces and choose the link address for the image you would like to use)
 #
