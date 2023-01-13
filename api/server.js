@@ -12,7 +12,7 @@ const image = require('./controllers/image');
 const auth = require('./controllers/authorization');
 const signOut = require('./controllers/signOut');
 
-//Database Setup
+// Database Setup
 const db = knex({
   client: 'pg',
   connection: process.env.DATABASE_URL,
